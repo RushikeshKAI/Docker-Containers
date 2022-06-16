@@ -116,3 +116,15 @@ Coupon code: udemystudent1118
 Link: https://udlabs.kodekloud.com/courses/udemy-labs-docker-for-the-absolute-beginner/
 
 
+# How to Run Vote-app
+
+Run in this directory:
+
+> docker-compose up
+
+or either if you want to run it in background 
+
+> docker-compose up -d
+
+The app will be running at http://localhost:5000, and the results will be at http://localhost:5001.
+

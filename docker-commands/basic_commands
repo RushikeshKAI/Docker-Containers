@@ -1,0 +1,101 @@
+Docker commands:
+
+How to show Running/stop state Containers:
+To show Running state containers
+> docker ps
+To show all running and accidently stopped containers
+> docker ps -a
+How to stop containers 
+> docker stop container_name
+> docker ps -a
+
+Rm - Remove a Container 
+> docker rm <container-ID>
+
+Rmi- Remove a Image
+How to check docker images
+> docker images
+> docker rmi image name or ID
+
+Pull- Download an Image
+> docker pull image name
+
+Run an Instance of Docker Container
+> docker run image name or container name
+
+Sleep container for some time
+> docker run container-name sleep 5
+
+Exec- Execute a command
+> docker ps -a
+> docker exec run <options>
+    options:
+        to go inside container and execute some commands
+        > /bin/bash 
+
+        To show some contents host file information
+        > cat /etc/hosts
+
+Run - attach and detach
+> docker run kodekloud/simple-webapp
+> docker attach <container-ID>
+Run docker in background
+> docker run -d
+
+
+Exercises:
+> docker run centos
+> docker pull centos
+> docker run -it centos bash
+> cat /etc/*release*
+> exit
+
+
+Run - PORT Mapping
+> docker run -p 80:5000 <container name>
+
+and access it with IP 
+http://192.168.1.5:80
+
+
+RUN- Volume Mapping
+> docker run mysql
+> docker run -v /opt/datadir:/var/lib/mysql mysql
+    /opt/datadir - Is external volume and /var/lib/mysql is container volume
+
+Inspect Container
+> docker inspect <container ID>
+
+Container Logs
+> docker logs <container ID>
+
+Print every second
+> docker run timer
+
+How to run in backgroung mode
+> docker run -d timer
+> docker ps
+> docker attach <container ID>
+
+
+Pull Jenkins image
+> docker run jenkins
+> docker run -p 8080:8080 jenkins
+
+
+Dependencies: apt-get update && apt-get install -y python python-setuptools python-dev build-essential python-pip python-mysqldb
+
+Build Docker commands:
+
+> docker build .
+> docker build . -t my_simple_webapp
+
+
+
+Command vs Entrypoint
+Command 
+> docker run <container ID> sleep 10
+
+Entrypoint
+FROM XYZ
+CMD sleep 10
